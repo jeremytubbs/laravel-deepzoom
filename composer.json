@@ -1,0 +1,11 @@
+{
+    "name": "Jeremytubbs/LaravelDeepzoom",
+    "autoload": {
+        "psr-4": {
+            "Jeremytubbs\\LaravelDeepzoom\\": "src/"
+        }
+    },
+    "require": {
+        "jeremytubbs/deepzoom": "^0.4.2"
+    }
+}
