@@ -1,5 +1,24 @@
 {
     "name": "Jeremytubbs/LaravelDeepzoom",
+    "description": "Laravel Deepzoom Tile Generator for OpenSeadragon",
+    "license": "MIT",
+    "authors" : [
+        {
+            "name": "Jeremy Tubbs",
+            "email": "jeremytubbs@gmail.com",
+            "homepage": "http://jeremytubbs.com"
+        }
+    ],
+    "keywords": [
+    	"laravel",
+    	"laravel5",
+        "openseadragon",
+        "deepzoom",
+        "dzi",
+        "zoom",
+        "zoomable",
+        "tiled"
+    ],
     "autoload": {
         "psr-4": {
             "Jeremytubbs\\LaravelDeepzoom\\": "src/"
