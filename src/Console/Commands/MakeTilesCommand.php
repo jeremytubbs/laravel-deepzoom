@@ -7,6 +7,8 @@ use Jeremytubbs\LaravelDeepzoom\Commands\MakeTiles;
 
 class MakeTilesCommand extends Command
 {
+    use \Illuminate\Foundation\Bus\DispatchesCommands;
+
     /**
      * The name and signature of the console command.
      *

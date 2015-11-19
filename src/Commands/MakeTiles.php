@@ -8,7 +8,7 @@ use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Jeremytubbs\Deepzoom\DeepzoomFactory;
 
-class HarvestImages extends Job implements SelfHandling, ShouldQueue
+class MakeTiles extends Job implements SelfHandling, ShouldQueue
 {
     use InteractsWithQueue;
 
