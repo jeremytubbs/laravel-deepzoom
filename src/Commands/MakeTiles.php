@@ -13,15 +13,19 @@ class MakeTiles extends Job implements SelfHandling, ShouldQueue
     use InteractsWithQueue;
 
     protected $image;
+    protected $filename;
+    protected $folder;
 
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct($image)
+    public function __construct($image, $filename = null, $folder = null)
     {
-        $this->image = $image;
+        $this->image = config('deepzoom.source_path') . '/' . $image;
+        $this->filename = $filename;
+        $this->folder = $folder;
         $this->deepzoom = DeepzoomFactory::create([
             'path' => config('deepzoom.destination_path'),
             'driver' => config('deepzoom.driver'),
@@ -35,6 +39,6 @@ class MakeTiles extends Job implements SelfHandling, ShouldQueue
      */
     public function handle()
     {
-    	$this->deepzoom->makeTiles($this->image);
+    	$this->deepzoom->makeTiles($this->image, $this->filename, $this->folder);
     }
 }

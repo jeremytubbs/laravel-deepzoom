@@ -43,21 +43,33 @@ class MakeTilesCommand extends Command
      */
     public function handle()
     {
-        $image = $this->argument('image') ? config('deepzoom.source_path') . '/' . $this->argument('image') : null;
-        $filename = $this->option('filename');
-        $folder = $this->option('folder');
+        $filename = $this->option('filename') == 'null' ? null : $this->option('filename');
+        $folder = $this->option('folder') == 'null' ? null : $this->option('folder');
+        $image_path = $this->argument('image') ? config('deepzoom.source_path') . '/' . $this->argument('image') : null;
 
-        while (! $image) {
-            $temp = $this->ask('Enter an image name?');
-            $temp = config('deepzoom.source_path') . '/' . $temp;
-            if (! \File::exists($temp)) {
+        // check if path is valid
+        if (\File::exists($image_path)) {
+            $image = $this->argument('image');
+        } else {
+            $this->error('Image not found!');
+            $this->error($image_path);
+            $image_path = null;
+        }
+
+        // loop until path is valid
+        while (! $image_path) {
+            $temp_image = $this->ask('Enter an image name?');
+            $temp_path = config('deepzoom.source_path') . '/' . $temp_image;
+            if (! \File::exists($temp_path)) {
                 $this->error('Image not found!');
-                $this->error($temp);
+                $this->error($temp_path);
             } else {
-                $image = $temp;
+                $image = $temp_image;
+                $image_path = $temp_path;
             }
         }
-        $command = new MakeTiles($image);
+
+        $command = new MakeTiles($image, $filename, $folder);
         $this->dispatch($command);
     }
 }
