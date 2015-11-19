@@ -5,7 +5,7 @@ Laravel Tile Generator for use with OpenSeadragon: https://openseadragon.github.
 This package utilizes my deepzoom package: https://github.com/jeremytubbs/deepzoom
 
 ### Usage
-The laravel package provides an artisan command to queue image the image tiling command.
+The laravel package provides an artisan command to queue the image tiling command.
 ```sh
 php artisan deepzoom:tile
 ```
