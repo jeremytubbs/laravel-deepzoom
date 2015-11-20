@@ -1,5 +1,5 @@
 {
-    "name": "Jeremytubbs/LaravelDeepzoom",
+    "name": "jeremytubbs/laravel-deepzoom",
     "description": "Laravel Deepzoom Tile Generator for OpenSeadragon",
     "license": "MIT",
     "authors" : [
