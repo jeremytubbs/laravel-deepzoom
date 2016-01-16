@@ -26,6 +26,6 @@
     },
     "require": {
         "php": ">=5.5.9",
-        "jeremytubbs/deepzoom": "^0.5.0"
+        "jeremytubbs/deepzoom": "^0.5.*"
     }
 }
