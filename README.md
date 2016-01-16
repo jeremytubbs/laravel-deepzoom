@@ -38,7 +38,7 @@ class MyController extends Controller
 Add service provider to `app/config`:
 
 ```php
-Jeremytubbs\LaravelDeepzoom\LaravelDeepzoomServiceProvider::class,
+Jeremytubbs\LaravelDeepzoom\DeepzoomServiceProvider::class,
 ````
 
 Publish the `deepzoom.php` config file:
