@@ -40,6 +40,6 @@ class MakeTiles extends Job implements SelfHandling, ShouldQueue
      */
     public function handle()
     {
-    	$this->deepzoom->makeTiles($this->image, $this->filename, $this->folder);
+        $this->deepzoom->makeTiles($this->image, $this->filename, $this->folder);
     }
 }
