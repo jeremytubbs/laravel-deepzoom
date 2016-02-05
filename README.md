@@ -25,7 +25,7 @@ use Jeremytubbs\LaravelDeepzoom\Commands\MakeTiles;
 
 class MyController extends Controller
 {
-	use \Illuminate\Foundation\Bus\DispatchesCommands;
+    use \Illuminate\Foundation\Bus\DispatchesJobs;
 
 	public function makeTiles($image, $filename = null, $folder = null) {
 		$command = new MakeTiles($image, $filename, $folder);
