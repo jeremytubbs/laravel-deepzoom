@@ -1,7 +1,7 @@
 <?php
 
 return [
-    // source path for images to me tiled
+    // source path for images to be tiled
     'source_path' => public_path('images'),
     // destination path for tiled output
     'destination_path' => public_path('images'),
