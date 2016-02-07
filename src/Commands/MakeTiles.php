@@ -15,22 +15,19 @@ class MakeTiles extends Job implements SelfHandling, ShouldQueue
     protected $image;
     protected $filename;
     protected $folder;
+    protected $config;
 
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct($image, $filename = null, $folder = null)
+    public function __construct($image, $filename = null, $folder = null, $config = null)
     {
         $this->image = config('deepzoom.source_path') . '/' . $image;
         $this->filename = $filename;
         $this->folder = $folder;
-        $this->deepzoom = DeepzoomFactory::create([
-            'path' => config('deepzoom.destination_path'),
-            'driver' => config('deepzoom.driver'),
-            'format' => config('deepzoom.tile_format'),
-        ]);
+        $this->setDeepzoom($config);
     }
 
     /**
@@ -41,5 +38,14 @@ class MakeTiles extends Job implements SelfHandling, ShouldQueue
     public function handle()
     {
         $this->deepzoom->makeTiles($this->image, $this->filename, $this->folder);
+    }
+
+    public function setDeepzoom($config)
+    {
+        $this->deepzoom = DeepzoomFactory::create([
+            'path'   => isset($config['deepzoom_destination_path']) ? $config['deepzoom_destination_path'] : config('deepzoom.destination_path'),
+            'driver' => isset($config['deepzoom_driver']) ? $config['deepzoom_driver'] : config('deepzoom.driver'),
+            'format' => isset($config['deepzoom_tile_format']) ? $config['deepzoom_tile_format'] : config('deepzoom.tile_format'),
+        ]);
     }
 }
