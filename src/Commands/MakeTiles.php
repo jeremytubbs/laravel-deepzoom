@@ -43,9 +43,9 @@ class MakeTiles extends Job implements SelfHandling, ShouldQueue
     public function setDeepzoom($config)
     {
         $this->deepzoom = DeepzoomFactory::create([
-            'path'   => isset($config['deepzoom_destination_path']) ? $config['deepzoom_destination_path'] : config('deepzoom.destination_path'),
-            'driver' => isset($config['deepzoom_driver']) ? $config['deepzoom_driver'] : config('deepzoom.driver'),
-            'format' => isset($config['deepzoom_tile_format']) ? $config['deepzoom_tile_format'] : config('deepzoom.tile_format'),
+            'path'   => isset($config['destination_path']) ? $config['destination_path'] : config('deepzoom.destination_path'),
+            'driver' => isset($config['driver']) ? $config['driver'] : config('deepzoom.driver'),
+            'format' => isset($config['tile_format']) ? $config['tile_format'] : config('deepzoom.tile_format'),
         ]);
     }
 }
