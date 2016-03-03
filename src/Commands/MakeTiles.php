@@ -24,7 +24,7 @@ class MakeTiles extends Job implements SelfHandling, ShouldQueue
      */
     public function __construct($image, $filename = null, $folder = null, $config = null)
     {
-        $this->image = $image;
+        $this->image = config('deepzoom.source_path') . '/' . $image;
         $this->filename = $filename;
         $this->folder = $folder;
         $this->setDeepzoom($config);
