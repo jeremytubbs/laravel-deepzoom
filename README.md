@@ -10,7 +10,7 @@ Artisan command to queue image tiling:
 php artisan deepzoom:tile
 ```
 
-The artisan command accepts an image argument, as well as; filename and folder options. If no image argument is provided you will recieve a prompt to enter an image name. The image path is based off the `source_path' defined in the `deepzoom.php` config file.
+The artisan command accepts an image argument, as well as; filename and folder options. If no image argument is provided you will recieve a prompt to enter an image name.
 
 ```sh
 php artisan deepzoom:tile KISS.jpg --filename=kiss --folder=keep-it-simple-stupid
@@ -27,7 +27,7 @@ class MyController extends Controller
 {
     use \Illuminate\Foundation\Bus\DispatchesJobs;
 
-	public function makeTiles($image, $filename = null, $folder = null) {
+	public function handle($image, $filename = null, $folder = null) {
 		$command = new MakeTiles($image, $filename, $folder);
 		$this->dispatch($command);
 	}

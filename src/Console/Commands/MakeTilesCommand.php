@@ -45,7 +45,7 @@ class MakeTilesCommand extends Command
     {
         $filename = $this->option('filename') == 'null' ? null : $this->option('filename');
         $folder = $this->option('folder') == 'null' ? null : $this->option('folder');
-        $image_path = $this->argument('image') ? config('deepzoom.source_path') . '/' . $this->argument('image') : null;
+        $image_path = $this->argument('image') ? $this->argument('image') : null;
 
         // check if path is valid
         if (\File::exists($image_path)) {
