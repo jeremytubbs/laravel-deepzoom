@@ -1,9 +1,10 @@
 <?php
 
 return [
-    // destination path for tiled output
-    'destination_path' => public_path('images'),
+    'source_path' => storage_path('images'),
+    'destination_path' => public_path('app/images'),
+
     // Choose between gd and imagick support.
-    'driver' => 'imagick',
+    'driver' => 'gd',
     'tile_format' => 'jpg',
 ];
