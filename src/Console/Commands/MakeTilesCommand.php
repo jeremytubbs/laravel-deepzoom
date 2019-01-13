@@ -45,7 +45,7 @@ class MakeTilesCommand extends Command
     {
         $filename = $this->option('filename') == 'null' ? null : $this->option('filename');
         $folder = $this->option('folder') == 'null' ? null : $this->option('folder');
-        $image_path = $this->argument('image') ? $this->argument('image') : null;
+        $image_path = $this->argument('image') ? config('deepzoom.source_path') . '/' . $this->argument('image') : null;
 
         // check if path is valid
         if (\File::exists($image_path)) {
@@ -60,6 +60,7 @@ class MakeTilesCommand extends Command
         while (! $image_path) {
             $temp_image = $this->ask('Enter an image name?');
             $temp_path = config('deepzoom.source_path') . '/' . $temp_image;
+
             if (! \File::exists($temp_path)) {
                 $this->error('Image not found!');
                 $this->error($temp_path);
@@ -69,7 +70,7 @@ class MakeTilesCommand extends Command
             }
         }
 
-        $command = new MakeTiles($image, $filename, $folder);
+        $command = new MakeTiles($image_path, $filename, $folder);
         $this->dispatch($command);
     }
 }

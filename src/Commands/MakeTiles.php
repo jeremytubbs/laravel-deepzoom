@@ -2,15 +2,15 @@
 
 namespace Jeremytubbs\LaravelDeepzoom\Commands;
 
-use App\Jobs\Job;
+use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Bus\SelfHandling;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Jeremytubbs\Deepzoom\DeepzoomFactory;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
 
-class MakeTiles extends Job implements SelfHandling, ShouldQueue
+class MakeTiles implements ShouldQueue
 {
-    use InteractsWithQueue;
+    use Dispatchable, InteractsWithQueue, Queueable;
 
     protected $image;
     protected $filename;
