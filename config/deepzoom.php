@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'source_path' => storage_path('images'),
-    'destination_path' => public_path('app/images'),
+    'source_path' => storage_path('app/images'),
+    'destination_path' => storage_path('tiles'),
 
     // Choose between gd and imagick support.
     'driver' => 'gd',
