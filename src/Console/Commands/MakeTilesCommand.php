@@ -60,7 +60,6 @@ class MakeTilesCommand extends Command
         while (! $image_path) {
             $temp_image = $this->ask('Enter an image name?');
             $temp_path = config('deepzoom.source_path') . '/' . $temp_image;
-            // dd($temp_path);
 
             if (! \File::exists($temp_path)) {
                 $this->error('Image not found!');
