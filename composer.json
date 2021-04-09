@@ -26,7 +26,7 @@
   },
   "require": {
     "php": ">=5.5.9",
-    "jeremytubbs/deepzoom": "0.5.*"
+    "jeremytubbs/deepzoom": "0.5.*|0.6.*"
   },
   "require-dev": {
     "larapack/dd": "^1.0"
