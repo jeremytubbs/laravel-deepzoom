@@ -64,6 +64,7 @@ class MakeTilesCommand extends Command
             $temp_path = config('deepzoom.source_path') . '/' . $temp_image;
 
             if (!File::exists($temp_path)) {
+
                 $this->error('Image not found!');
                 $this->error($temp_path);
             } else {
