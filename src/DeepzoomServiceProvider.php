@@ -14,16 +14,6 @@ class DeepzoomServiceProvider extends ServiceProvider
     protected $defer = false;
 
     /**
-     * Bootstrap the application events.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
-
-        /**
      * Register the service provider.
      *
      * @return void
@@ -31,7 +21,7 @@ class DeepzoomServiceProvider extends ServiceProvider
     public function register()
     {
         $this->publishes([
-            __DIR__.'/../config/deepzoom.php' => config_path('deepzoom.php'),
+            __DIR__ . '/../config/deepzoom.php' => config_path('deepzoom.php'),
         ], 'config');
 
         $this->commands([
