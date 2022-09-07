@@ -1,41 +1,40 @@
 {
-  "name": "jeremytubbs/laravel-deepzoom",
-  "description": "Laravel Deepzoom Tile Generator for OpenSeadragon",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Jeremy Tubbs",
-      "email": "jeremytubbs@gmail.com",
-      "homepage": "http://jeremytubbs.com"
+    "name": "jeremytubbs/laravel-deepzoom",
+    "description": "Laravel Deepzoom Tile Generator for OpenSeadragon",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeremy Tubbs",
+            "email": "jeremytubbs@gmail.com",
+            "homepage": "https://jeremytubbs.com"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "openseadragon",
+        "deepzoom",
+        "dzi",
+        "zoom",
+        "zoomable",
+        "tiled"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Jeremytubbs\\LaravelDeepzoom\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "jeremytubbs/deepzoom": "0.6.*"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jeremytubbs\\LaravelDeepzoom\\DeepzoomServiceProvider"
+            ]
+        }
     }
-  ],
-  "keywords": [
-    "laravel",
-    "laravel5",
-    "openseadragon",
-    "deepzoom",
-    "dzi",
-    "zoom",
-    "zoomable",
-    "tiled"
-  ],
-  "autoload": {
-    "psr-4": {
-      "Jeremytubbs\\LaravelDeepzoom\\": "src/"
-    }
-  },
-  "require": {
-    "php": ">=5.5.9",
-    "jeremytubbs/deepzoom": "0.5.*"
-  },
-  "require-dev": {
-    "larapack/dd": "^1.0"
-},
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Jeremytubbs\\LaravelDeepzoom\\DeepzoomServiceProvider"
-      ]
-    }
-  }
 }
